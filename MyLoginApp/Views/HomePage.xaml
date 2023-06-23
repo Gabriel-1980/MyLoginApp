@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login_IN.LoginPage"
+             Title="Gestor de usuarios Plex"
+             Shell.NavBarHasShadow="False">
+
+    <Grid BackgroundColor="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"
+                           />
+        </Grid.RowDefinitions>
+
+        <Path Stroke="#2D6862" Data="m0,-75l453.99995,0l0,182.41564c-105.93394,107.68488 -335.75781,79.90035 -453.99995,30.01296l0,-212.4286z" Fill="#d9ad26" WidthRequest="0" HeightRequest="0" Margin="0"   />
+
+        <StackLayout>
+            <Frame BackgroundColor="SkyBlue" HeightRequest="80" WidthRequest="80" CornerRadius="50" Padding="0" Margin="156,60,156,0" HorizontalOptions="CenterAndExpand">
+                <Image Source="https://e7.pngegg.com/pngimages/783/146/png-clipart-plex-media-server-computer-icons-media-player-tv-icon-miscellaneous-logo.png" Aspect="Fill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="28,28,28,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Text="¡Bienvenido!" TextColor="White" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0,20,0,0"/>
+            <Label Grid.Row="2" Text="Inicie sesion para continuar" TextColor="White" HorizontalOptions="Center" FontSize="Subtitle" Margin="0,15,0,0" />
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="#d9ad26" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-512.png" Aspect="Fill" Margin="0" />
+                        </Frame>
+                        <Entry Text="{Binding Usuario}" Placeholder="Usuario" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="#d9ad26" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,15,0,0" >
+                    <StackLayout Orientation="Horizontal">
+                        <Frame HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="https://cdn1.iconfinder.com/data/icons/business-productivity-set-1/100/password_encryption_protection_secure_security_lock_firewall-512.png" Aspect="Fill" Margin="0" />
+                        </Frame>
+                        <Entry Text="{Binding Contraseña}" Placeholder="Contraseña" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,0" Padding="0">
+                    <CheckBox IsChecked="False" Color="#d9ad26"/>
+                    <Label Text="Guardar contraseña" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0"/>
+                    <Label Text="Has olvidado tu contraseña?" TextColor="#d9ad26" FontAttributes="Bold" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <Button Text="Iniciar sesion" BackgroundColor="#d9ad26" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,25,0,0" Command="{Binding LoginCommand}"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0">
+                    <Label Text="Usuario nuevo" FontAttributes="Bold" TextColor="DarkGray" FontSize="Small"/>
+                    <Label Text=" Regristrate" TextColor="#d9ad26" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
